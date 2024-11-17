@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Portfolio Item</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+  <h1>Edit Portfolio Item</h1>
+
+  <form action="/portfolio/edit/<%= portfolioItem._id %>" method="POST" enctype="multipart/form-data">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" value="<%= portfolioItem.title %>" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" required><%= portfolioItem.description %></textarea>
+
+    <label for="images">Images (max 3):</label>
+    <input type="file" id="images" name="images" multiple accept="image/*">
+
+    <button type="submit">Update Portfolio Item</button>
+  </form>
+
+</body>
+</html>

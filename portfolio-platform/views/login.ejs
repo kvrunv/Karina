@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вход</title>
+  <link rel="stylesheet" href="/styles.css"> <!-- подключаем стили -->
+</head>
+<body>
+  <div class="login-container">
+    <h2>Вход в систему</h2>
+    <form action="/login" method="POST">
+      <div>
+        <label for="username">Имя пользователя:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+      <div>
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <!-- Если включена двухфакторная аутентификация -->
+      <% if (twoFactorRequired) { %>
+        <div>
+          <label for="twoFactorCode">Код двухфакторной аутентификации:</label>
+          <input type="text" id="twoFactorCode" name="twoFactorCode" required>
+        </div>
+      <% } %>
+
+      <div>
+        <button type="submit">Войти</button>
+      </div>
+    </form>
+
+    <!-- Выводим ошибку, если есть -->
+    <% if (error) { %>
+      <div class="error">
+        <p><%= error %></p>
+      </div>
+    <% } %>
+
+    <div class="register-link">
+      <p>Нет аккаунта? <a href="/register">Зарегистрироваться</a></p> <!-- Ссылка на регистрацию -->
+    </div>
+  </div>
+</body>
+</html>

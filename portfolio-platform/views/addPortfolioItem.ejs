@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Portfolio Item</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<h1>Create New Portfolio Item</h1>
+
+<form action="/portfolio" method="POST" enctype="multipart/form-data">
+  <label for="title">Title:</label>
+  <input type="text" id="title" name="title" required>
+
+  <label for="description">Description:</label>
+  <textarea id="description" name="description" required></textarea>
+
+  <label for="images">Images (max 3):</label>
+  <input type="file" id="images" name="images" multiple required>
+
+  <button type="submit">Create Portfolio Item</button>
+</form>
+
+</body>
+</html>

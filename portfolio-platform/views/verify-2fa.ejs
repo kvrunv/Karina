@@ -1,0 +1,12 @@
+<!-- verify-2fa.ejs -->
+<h1>Введите код из Google Authenticator</h1>
+
+<form action="/verify-2fa" method="POST">
+  <label for="token">Код:</label>
+  <input type="text" id="token" name="token" required maxlength="6" placeholder="Введите код">
+  <button type="submit">Подтвердить</button>
+</form>
+
+<% if (error) { %>
+  <p style="color: red;"><%= error %></p>
+<% } %>
